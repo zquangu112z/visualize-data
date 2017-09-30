@@ -1,3 +1,3 @@
 confusion_matrix:
-	PYTHONPATH=$(HOME)/Fiisoft/practice-visualizedata python confusion_matrix.py
+	PYTHONPATH=$(HOME)/Fiisoft/practice-visualizedata python src/confusion_matrix.py
 

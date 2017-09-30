@@ -1,7 +1,19 @@
-import seaborn as sn
-import pandas as pd
 import matplotlib.pyplot as plt
-array = [[33,2,0,0,0,0,0,0,0,1,3], 
+import numpy as np
+
+def plot2DMatrix(array):
+    plt.ylabel('Right labels')
+    plt.title('Confusion Matrix')
+    plt.imshow(array, origin='upper');
+    for i in range(len(array)):
+        for j in range(len(array[0])):
+            plt.text(i-0.15,j+0.15,array[i][j])
+
+    plt.colorbar()
+    plt.show()
+
+if __name__ == '__main__':
+    array = [[33,2,0,0,0,0,0,0,0,1,3], 
         [3,31,0,0,0,0,0,0,0,0,0], 
         [0,4,41,0,0,0,0,0,0,0,1], 
         [0,1,0,30,0,6,0,0,0,0,1], 
@@ -12,7 +24,4 @@ array = [[33,2,0,0,0,0,0,0,0,1,3],
         [0,0,0,0,0,0,1,5,37,5,1], 
         [3,0,0,0,0,0,0,0,0,39,0], 
         [0,0,0,0,0,0,0,0,0,0,38]]
-df_cm = pd.DataFrame(array, index = [i for i in "ABCDEFGHIJK"],
-                  columns = [i for i in "ABCDEFGHIJK"])
-plt.figure(figsize = (10,7))
-sn.heatmap(df_cm, annot=True)
+    plot2DMatrix(array)
