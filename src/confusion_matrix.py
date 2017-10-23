@@ -7,7 +7,7 @@ def plot2DMatrix(array):
     plt.imshow(array, origin='upper');
     for i in range(len(array)):
         for j in range(len(array[0])):
-            plt.text(i-0.15,j+0.15,array[i][j])
+            plt.text(i-0.125,j+0.125,array[i][j])
 
     plt.colorbar()
     plt.show()
